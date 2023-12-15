@@ -27,10 +27,10 @@ export default function Navbar() {
         position: "sticky",
         display: "flex",
         alignItems: "center",
+        background: "#F1E7D5"
       }}
     >
       <Menu
-        theme="dark"
         mode="horizontal"
         selectedKeys={selectedKeys}
         onClick={onClick}
@@ -38,6 +38,7 @@ export default function Navbar() {
         style={{
           flex: 1,
           minWidth: 100,
+          background: "#F1E7D5"
         }}
       />
     </Header>
