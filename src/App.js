@@ -1,6 +1,5 @@
 import React from "react";
-import { Flex, Image, Layout, theme } from "antd";
-import ShanerPic from "./components/images/when.png";
+import { Flex, Layout, theme } from "antd";
 import Navbar from "./components/Navbar";
 
 const { Content, Footer } = Layout;
@@ -47,4 +46,3 @@ const App = () => {
 };
 
 export default App;
-
