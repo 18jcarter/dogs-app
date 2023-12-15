@@ -1,29 +1,17 @@
 import React from "react";
-import { Flex, Image, Layout, theme } from "antd";
-import ShanerPic from "./components/images/when.png";
+import { Flex, Layout, theme } from "antd";
+import Navbar from "./components/Navbar";
 
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 
-const App: React.FC = () => {
+const App = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
   return (
     <Layout>
-      <Header
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 1,
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Image src={ShanerPic} width={100} />
-        <Flex style={{ color: "white" }}>Eventually a wedding sign rental website</Flex>
-      </Header>
+      <Navbar />
       <Content style={{ padding: "0 48px" }}>
         <Flex horizontal>
           <div
@@ -50,7 +38,9 @@ const App: React.FC = () => {
           </div>
         </Flex>
       </Content>
-      <Footer style={{ textAlign: "center" }}>Ant Design ©2023 Created by Ant UED</Footer>
+      <Footer style={{ textAlign: "center" }}>
+        Ant Design ©2023 Created by Ant UED
+      </Footer>
     </Layout>
   );
 };
