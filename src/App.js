@@ -1,11 +1,12 @@
-import './App.css';
+import { Layout, Menu } from "antd";
+import "./App.css";
+import React, { useState } from "react";
+import Navbar from "./componets/Navbar";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      Jim is the best coder ever
-    </div>
+    <Layout>
+      <Navbar />
+    </Layout>
   );
 }
-
-export default App;
