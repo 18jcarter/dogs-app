@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Layout, Menu, Typography } from "antd";
+import { Layout, Menu, Typography } from "antd";
 
 const { Title } = Typography;
 const { Header } = Layout;
@@ -11,7 +11,7 @@ const items = [
     key: "rentals",
     children: [
       {
-        label: "Welcoming Committee",
+        label: <a href={`/products`}>Welcoming Committee</a>,
         key: "rental:1",
       },
       {
@@ -54,6 +54,7 @@ const Navbar = () => {
         selectedKeys={selectedKeys}
         onClick={onClick}
         items={items}
+        className="secondaryText"
         style={{
           background: "#F2EDE3",
           width: "min-content",

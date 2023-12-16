@@ -17,6 +17,10 @@
   font-family: "elmhurst", serif;
 }
 
+.secondaryText {
+  font-family: "altivo", sans-serif;
+}
+
 .primaryButton {
   background: #436585;
   color: #f1e7d5;

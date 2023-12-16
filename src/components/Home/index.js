@@ -32,6 +32,7 @@ const HomePage = () => {
             </Flex>
           </div>
         </Flex>
+        <Flex>FORTNITEFORTNITEFORNITEFORTNITE</Flex>
       </Content>
       <Footer style={{ textAlign: "center" }}>MME ©2023 Created by 3 Bots</Footer>
     </Layout>
