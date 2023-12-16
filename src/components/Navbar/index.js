@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Layout, Menu, Typography } from "antd";
+import { Menu, Typography } from "antd";
 
 const { Title } = Typography;
-const { Header } = Layout;
 
 const items = [
   { label: "About Us", key: "about_us" },
@@ -24,11 +23,11 @@ const items = [
       },
     ],
   },
-  { 
-    label: <a href={`/contact`}>Contact</a>, 
-    key: "contact" 
+  {
+    label: <a href={`/contact`}>Contact</a>,
+    key: "contact",
   },
-  { label: "Cart", key: "cart" },
+  { label: <a href={`cart`}>Cart</a>, key: "cart" },
 ];
 
 const Navbar = () => {
@@ -40,15 +39,7 @@ const Navbar = () => {
   };
 
   return (
-    <Header
-      style={{
-        position: "sticky",
-        display: "flex",
-        alignItems: "center",
-        background: "#F2EDE3",
-        justifyContent: "space-around",
-      }}
-    >
+    <>
       <Title
         className="primaryText"
         style={{ fontWeight: "lighter", textAlign: "center", flex: 2 }}
@@ -69,7 +60,7 @@ const Navbar = () => {
           flex: 1,
         }}
       />
-    </Header>
+    </>
   );
 };
 
