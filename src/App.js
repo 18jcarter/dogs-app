@@ -1,10 +1,8 @@
-import HomePage from './components/Home';
-import './App.css';
+import HomePage from "./components/Home";
+import "./App.css";
 
 const App = () => {
-  return (
-    <HomePage/>
-  );
+  return <HomePage />;
 };
 
 export default App;
