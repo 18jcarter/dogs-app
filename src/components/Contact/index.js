@@ -1,5 +1,13 @@
 import React from "react";
-import { Button, Checkbox, DatePicker, Form, Input, InputNumber, Select } from "antd";
+import {
+  Button,
+  Checkbox,
+  DatePicker,
+  Form,
+  Input,
+  InputNumber,
+  Select,
+} from "antd";
 const { Option } = Select;
 
 const formItemLayout = {
@@ -153,7 +161,9 @@ const Contact = () => {
         rules={[
           {
             validator: (_, value) =>
-              value ? Promise.resolve() : Promise.reject(new Error("Should accept agreement")),
+              value
+                ? Promise.resolve()
+                : Promise.reject(new Error("Should accept agreement")),
           },
         ]}
         {...tailFormItemLayout}
