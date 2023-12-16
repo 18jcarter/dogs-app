@@ -46,8 +46,13 @@ const Navbar = () => {
         justifyContent: "space-around",
       }}
     >
-      <Title className="primaryText" style={{ textAlign: "center", flex: 2 }}>
-        Wedding Rental Name Placeholder
+      <Title
+        className="primaryText"
+        style={{ fontWeight: "lighter", textAlign: "center", flex: 2 }}
+      >
+        <a className="Text" href={"/"}>
+          r.eternity
+        </a>
       </Title>
       <Menu
         mode="horizontal"

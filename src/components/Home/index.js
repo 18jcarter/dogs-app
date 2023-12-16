@@ -1,7 +1,9 @@
 import React from "react";
-import { Flex, Layout, Row, Col, Button } from "antd";
+import { Flex, Layout, Row, Col, Button, Typography, Image } from "antd";
 import Navbar from "../Navbar";
+import SignPic from "../images/WeddingSignPic.jpeg";
 
+const { Title } = Typography;
 const { Content, Footer } = Layout;
 
 const HomePage = () => {
@@ -9,6 +11,19 @@ const HomePage = () => {
     <Layout>
       <Navbar />
       <Content>
+        <Flex>
+          <Flex vertical style={{ width: "50%", paddingLeft: 100 }}>
+            <Title className="primaryText" style={{ fontSize: 100 }}>
+              Premium Wedding Sign Rentals.
+            </Title>
+            <Title level={2} className="primaryText">
+              Specifically designed for you.
+            </Title>
+          </Flex>
+          <Flex style={{ width: "50%" }}>
+            <Image src={SignPic} preview={false} />
+          </Flex>
+        </Flex>
         <Flex>
           <div className="mainBackground">
             <Flex style={{ width: "100%" }}>
