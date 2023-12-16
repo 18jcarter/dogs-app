@@ -1,20 +1,35 @@
 import React, { useState } from "react";
-import { Layout, Menu } from "antd";
+import { Flex, Layout, Menu, Typography } from "antd";
 
+const { Title } = Typography;
 const { Header } = Layout;
 
-var items = [
-  { title: "Ty", key: "ty" },
-  { title: "is", key: "is" },
-  { title: "a", key: "a" },
-  { title: "bot", key: "bot" },
-].map((val) => ({
-  key: val.key,
-  label: val.title,
-}));
+const items = [
+  { label: "About Us", key: "about_us" },
+  {
+    label: "Rentals",
+    key: "rentals",
+    children: [
+      {
+        label: "Welcoming Committee",
+        key: "rental:1",
+      },
+      {
+        label: "Aesthetic Compliment",
+        key: "rental:2",
+      },
+      {
+        label: "Extra Details",
+        key: "rental:3",
+      },
+    ],
+  },
+  { label: "Contact", key: "contact" },
+  { label: "Cart", key: "cart" },
+];
 
-export default function Navbar() {
-  const [selectedKeys, setSelectedKeys] = useState("ty");
+const Navbar = () => {
+  const [selectedKeys, setSelectedKeys] = useState("home");
 
   const onClick = (item) => {
     console.log("click ", item);
@@ -27,20 +42,26 @@ export default function Navbar() {
         position: "sticky",
         display: "flex",
         alignItems: "center",
-        background: "#F1E7D5"
+        background: "#F2EDE3",
+        justifyContent: "space-around",
       }}
     >
+      <Title className="primaryText" style={{ textAlign: "center", flex: 2 }}>
+        Wedding Rental Name Placeholder
+      </Title>
       <Menu
         mode="horizontal"
         selectedKeys={selectedKeys}
         onClick={onClick}
         items={items}
         style={{
+          background: "#F2EDE3",
+          width: "min-content",
           flex: 1,
-          minWidth: 100,
-          background: "#F1E7D5"
         }}
       />
     </Header>
   );
-}
+};
+
+export default Navbar;
