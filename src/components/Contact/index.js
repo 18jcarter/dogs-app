@@ -1,16 +1,5 @@
-import React, { useState } from 'react';
-import {
-  AutoComplete,
-  Button,
-  Cascader,
-  Checkbox,
-  Col,
-  Form,
-  Input,
-  InputNumber,
-  Row,
-  Select,
-} from 'antd';
+import React from "react";
+import { Button, Checkbox, DatePicker, Form, Input, InputNumber, Select } from "antd";
 const { Option } = Select;
 
 const formItemLayout = {
@@ -46,7 +35,7 @@ const tailFormItemLayout = {
 const Contact = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    console.log("Received values of form: ", values);
   };
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -59,30 +48,6 @@ const Contact = () => {
       </Select>
     </Form.Item>
   );
-  const suffixSelector = (
-    <Form.Item name="suffix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="USD">$</Option>
-        <Option value="CNY">¥</Option>
-      </Select>
-    </Form.Item>
-  );
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-  const onWebsiteChange = (value) => {
-    if (!value) {
-      setAutoCompleteResult([]);
-    } else {
-      setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-    }
-  };
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
-  }));
   return (
     <Form
       {...formItemLayout}
@@ -90,8 +55,7 @@ const Contact = () => {
       name="register"
       onFinish={onFinish}
       initialValues={{
-        residence: ['zhejiang', 'hangzhou', 'xihu'],
-        prefix: '86',
+        prefix: "1",
       }}
       style={{
         maxWidth: 600,
@@ -99,16 +63,12 @@ const Contact = () => {
       scrollToFirstError
     >
       <Form.Item
-        name="email"
-        label="E-mail"
+        name="first_name"
+        label="First Name"
         rules={[
           {
-            type: 'email',
-            message: 'The input is not valid E-mail!',
-          },
-          {
             required: true,
-            message: 'Please input your E-mail!',
+            message: "Please input your first name",
           },
         ]}
       >
@@ -116,51 +76,29 @@ const Contact = () => {
       </Form.Item>
 
       <Form.Item
-        name="password"
-        label="Password"
+        name="last_name"
+        label="Last Name"
         rules={[
           {
             required: true,
-            message: 'Please input your password!',
+            message: "Please input your last name!",
           },
         ]}
-        hasFeedback
       >
-        <Input.Password />
+        <Input />
       </Form.Item>
 
       <Form.Item
-        name="confirm"
-        label="Confirm Password"
-        dependencies={['password']}
-        hasFeedback
+        name="email"
+        label="E-mail"
         rules={[
           {
-            required: true,
-            message: 'Please confirm your password!',
+            type: "email",
+            message: "The input is not valid E-mail!",
           },
-          ({ getFieldValue }) => ({
-            validator(_, value) {
-              if (!value || getFieldValue('password') === value) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error('The new password that you entered do not match!'));
-            },
-          }),
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item
-        name="nickname"
-        label="Nickname"
-        tooltip="What do you want others to call you?"
-        rules={[
           {
             required: true,
-            message: 'Please input your nickname!',
-            whitespace: true,
+            message: "Please input your E-mail!",
           },
         ]}
       >
@@ -173,101 +111,40 @@ const Contact = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your phone number!',
+            message: "Please input your phone number!",
           },
         ]}
       >
         <Input
           addonBefore={prefixSelector}
           style={{
-            width: '100%',
+            width: "100%",
           }}
         />
       </Form.Item>
 
       <Form.Item
-        name="donation"
-        label="Donation"
+        name="event_date"
+        label="Event Date"
         rules={[
           {
             required: true,
-            message: 'Please input donation amount!',
+            message: "Please input your event date!",
           },
         ]}
       >
+        <DatePicker />
+      </Form.Item>
+      <Form.Item name="budget" label="Budget">
         <InputNumber
-          addonAfter={suffixSelector}
           style={{
-            width: '100%',
+            width: "100%",
           }}
         />
       </Form.Item>
 
-      <Form.Item
-        name="website"
-        label="Website"
-        rules={[
-          {
-            required: true,
-            message: 'Please input website!',
-          },
-        ]}
-      >
-        <AutoComplete options={websiteOptions} onChange={onWebsiteChange} placeholder="website">
-          <Input />
-        </AutoComplete>
-      </Form.Item>
-
-      <Form.Item
-        name="intro"
-        label="Intro"
-        rules={[
-          {
-            required: true,
-            message: 'Please input Intro',
-          },
-        ]}
-      >
+      <Form.Item name="instructions" label="Additional instructions">
         <Input.TextArea showCount maxLength={100} />
-      </Form.Item>
-
-      <Form.Item
-        name="gender"
-        label="Gender"
-        rules={[
-          {
-            required: true,
-            message: 'Please select gender!',
-          },
-        ]}
-      >
-        <Select placeholder="select your gender">
-          <Option value="male">Male</Option>
-          <Option value="female">Female</Option>
-          <Option value="other">Other</Option>
-        </Select>
-      </Form.Item>
-
-      <Form.Item label="Captcha" extra="We must make sure that your are a human.">
-        <Row gutter={8}>
-          <Col span={12}>
-            <Form.Item
-              name="captcha"
-              noStyle
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input the captcha you got!',
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Button>Get captcha</Button>
-          </Col>
-        </Row>
       </Form.Item>
 
       <Form.Item
@@ -276,7 +153,7 @@ const Contact = () => {
         rules={[
           {
             validator: (_, value) =>
-              value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
+              value ? Promise.resolve() : Promise.reject(new Error("Should accept agreement")),
           },
         ]}
         {...tailFormItemLayout}
