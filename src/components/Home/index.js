@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Layout, Button, Typography, Image, Carousel } from "antd";
-import SignPic from "../images/WeddingSignPic.jpeg";
+import { Carousel1, Carousel2, Carousel3, Carousel4, WeddingSignPic } from "../images"
 
 const { Title } = Typography;
 const { Content, Footer } = Layout;
@@ -24,7 +24,7 @@ const HomePage = () => {
             </Flex>
           </Flex>
           <Flex style={{ width: "50%" }}>
-            <Image src={SignPic} preview={false} />
+            <Image src={WeddingSignPic} preview={false} />
           </Flex>
         </Flex>
         <Flex justify="center" align="center" style={{ background: '#748980', height: 200}}>
@@ -39,12 +39,12 @@ const HomePage = () => {
             </Flex>
           </Flex>
         </Flex>
-          <Carousel autoplay effect="fade"> 
-            <div><h3 className="carouselImage">Ty</h3></div>
-            <div><h3 className="carouselImage">is</h3></div>
-            <div><h3 className="carouselImage">a</h3></div>
-            <div><h3 className="carouselImage">bot!</h3></div>
-          </Carousel>
+        <Carousel autoplay effect="fade" dotPosition="bottom"> 
+          <Image src={Carousel1} preview={false} />
+          <Image src={Carousel2} preview={false} />
+          <Image src={Carousel3} preview={false} />
+          <Image src={Carousel4} preview={false} />
+        </Carousel>
       </Content>
       <Footer style={{ textAlign: "center" }}>MME ©2023 Created by 3 Bots</Footer>
     </Layout>

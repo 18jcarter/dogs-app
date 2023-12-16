@@ -24,7 +24,10 @@ const items = [
       },
     ],
   },
-  { label: "Contact", key: "contact" },
+  { 
+    label: <a href={`/contact`}>Contact</a>, 
+    key: "contact" 
+  },
   { label: "Cart", key: "cart" },
 ];
 
