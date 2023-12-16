@@ -20,9 +20,29 @@
 
 .secondaryText {
   font-family: "altivo", sans-serif;
+  color: #292f2f;
 }
 
-.primaryButton {
-  background: #436585;
-  color: #f1e7d5;
+#primaryButton {
+  background-color: #748980;
+  color: #f2ede3;
 }
+
+#primaryButton:hover {
+    color: #f2ede3;
+    background-color: #89A096;
+    border-color: #89A096;
+}
+
+.carouselImage {
+    height: 100px;
+    background: #800080;
+    color: #748980;
+    line-height: 100px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+

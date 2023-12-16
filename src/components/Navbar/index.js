@@ -50,7 +50,7 @@ const Navbar = () => {
         className="primaryText"
         style={{ fontWeight: "lighter", textAlign: "center", flex: 2 }}
       >
-        <a className="Text" href={"/"}>
+        <a style={{ color: "#292f2f" }} href={"/"}>
           r.eternity
         </a>
       </Title>
