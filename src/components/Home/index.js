@@ -31,7 +31,7 @@ const HomePage = () => {
         </Flex>
       </Content>
       <Footer style={{ textAlign: "center" }}>
-        MME ©2023 Created by 3 Bots
+        MME ©2023 Created by 2 Bots and Tyx
       </Footer>
     </Layout>
   );
