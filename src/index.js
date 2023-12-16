@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import ErrorPage from "./components/ErrorPage";
+import Navbar from "./components/Navbar";
+import Contact from "./components/Contact";
 import ProductList from "./components/Products/ProductList";
 
 const router = createBrowserRouter([
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
     path: "products",
     element: <ProductList/>,
   },
+  {
+    path: "contact",
+    element: <Contact />,
+  }
 ]);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -26,6 +32,7 @@ const router = createBrowserRouter([
 // );
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Navbar />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
