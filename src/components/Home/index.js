@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Layout, Button, Typography, Image, Carousel } from "antd";
+import { Flex, Button, Typography, Image, Carousel } from "antd";
 import {
   Carousel1,
   Carousel2,
@@ -9,12 +9,11 @@ import {
 } from "../images";
 
 const { Title } = Typography;
-const { Content, Footer } = Layout;
 
 const HomePage = () => {
   return (
     <>
-      <Flex style={{ height: 600 }}>
+      <Flex style={{ background: '#F2EDE3', height: 600 }}>
         <Flex vertical style={{ flex: 1, paddingRight: 100, paddingLeft: 100 }}>
           <Title className="primaryText" style={{ fontSize: 80 }}>
             Premium Wedding Sign Rentals.

@@ -7,7 +7,6 @@ import ErrorPage from "./components/ErrorPage";
 import Products from "./components/ProductList";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
-import Cart from "./components/Cart";
 import { Layout } from "antd";
 
 const { Header, Content, Footer } = Layout;
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
   {
     path: "contact",
     element: <Contact />,
-  },
-  {
-    path: "cart",
-    element: <Cart />,
   },
 ]);
 
